@@ -1,0 +1,76 @@
+﻿@model MaserPieceProject.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.OrderPrice)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.OrderPrice) JD</td>
+                                </tr>
+                                @*<tr>
+                    <td><strong>@Html.DisplayNameFor(model => model.isCheckout)</strong></td>
+                    <td>@Html.DisplayFor(model => model.isCheckout)</td>
+                </tr>*@
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.Adress)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.Adress)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.Email)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.Email)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.FirstName)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.FirstName)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.LastName)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.LastName)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.Phone)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.Phone)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.City)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.City)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.OrderDate)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.OrderDate)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.PaymentMethod)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.PaymentMethod)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.Isaccepted)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.Isaccepted)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>@Html.DisplayNameFor(model => model.AspNetUser.Email)</strong></td>
+                                    <td>@Html.DisplayFor(model => model.AspNetUser.Email)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |*@
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

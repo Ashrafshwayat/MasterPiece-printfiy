@@ -1,0 +1,78 @@
+﻿@model MaserPieceProject.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+@*<style>
+        .thumbnail {
+            top: -50px;
+            left: -35px;
+            display: block;
+            z-index: 999;
+            cursor: pointer;
+            -webkit-transition-property: all;
+            -webkit-transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease;
+            width: 50px;
+        }
+
+            /*  change the number below to scale to the appropriate size*/
+            .thumbnail:hover {
+                transform: scale(5);
+            }
+    </style>*@
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h4>Category</h4>
+                        <hr />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.CategoryName)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.CategoryName)
+                                </dd>
+                                <br />
+                                <br />
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.CategoryDescription)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.CategoryDescription)
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-8">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.CategoryImage)
+                                </dt>
+                                <dd>
+                                    @*@Html.DisplayFor(model => model.CategoryImage)*@
+                                    <img style="width:250px" src="~/images/@Model.CategoryImage" class="thumbnail" />
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <p>
+                        <a href="@Url.Action("Edit", new { id = Model.CategoryId })" class="btn btn-primary">Edit</a>
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,174 @@
+﻿@model IEnumerable<MaserPieceProject.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="u-s-m-b-8">
+                        @using (Html.BeginForm("Searchacc", "Orders"))
+                        {
+                            <div class="">
+                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="search" id="search" placeholder="Search for...">
+                                        <span class="input-group-btn" style="margin-left:3px">
+                                            <button class="btn btn-primary" type="submit">Search</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+                    <table class="table table-hover">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderPrice)
+                            </th>
+                            @*<th>
+            @Html.DisplayNameFor(model => model.isCheckout)
+        </th>*@
+                            @*<th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>*@
+                            @*<th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>*@
+                            @*<th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>*@
+                            @*<th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Phone)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.City)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderDate)
+                            </th>
+                            @*<th>
+            @Html.DisplayNameFor(model => model.PaymentMethod)
+        </th>*@
+                            @*<th>
+            @Html.DisplayNameFor(model => model.Isaccepted)
+        </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.AspNetUser.Email)
+                            </th>
+                            <th>
+                                ProductName
+                            </th>
+                            <th>
+                                pr name2
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OrderPrice)
+                                </td>
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.isCheckout)
+        </td>*@
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>*@
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>*@
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>*@
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OrderDate)
+                                </td>
+                                @*<td>
+           @Html.DisplayFor(modelItem => item.PaymentMethod)
+        </td>*@
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.Isaccepted)
+        </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                                </td>
+
+
+                                @{
+                                    MaserPieceProject.Models.masterpes3Entities1 db = new MaserPieceProject.Models.masterpes3Entities1();
+
+                                    //var id = User.Identity.;
+
+                                    var product = db.orderItems.Where(o => o.Order.Id== item.Id).ToList();
+
+                                    foreach (var item2 in product)
+                                    {
+                                        <td>
+                                            <p>@item2.Product.ProductName</p>
+                                        </td>
+                                        @*<td>
+                                            <p>@item2.Product.Quantity</p>
+                                        </td>*@
+
+                                    }}
+
+
+
+
+
+
+
+
+
+
+
+
+                                <td>
+
+                                    @*@Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |*@
+                                    @Html.ActionLink("Details", "Details", new { id = item.OrderId }, new { @class = "btn btn-secondary" }) |
+                                    @*@Html.ActionLink("Delete", "Delete", new { id = item.OrderId })*@
+                                    @Html.ActionLink("Shipping", "accept", "Orders", new { id = item.OrderId }, new { @class = "btn btn-success" })
+                                    @*@Html.ActionLink("Reject", "reject", "Orders", new { id = item.OrderId }, new { @class = "btn btn-danger" })*@
+
+                                </td>
+                                @*<td>
+            @Html.ActionLink("Accept", "accept", "Orders", new { id = item.OrderId }, new { @class = "btn btn-success" })
+
+        </td>
+        <td>
+            @Html.ActionLink("Reject", "reject", "Orders", new { id = item.OrderId }, new { @class = "btn btn-danger" })
+
+        </td>*@
+
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

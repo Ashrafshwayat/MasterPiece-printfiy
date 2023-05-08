@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="122fa0fd2667421c86866e3c37610c95" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="masterpes3Model.C__MigrationHistory" Width="1.5" PointX="10.75" PointY="4.125" />
+        <EntityTypeShape EntityType="masterpes3Model.AspNetRole" Width="1.5" PointX="7.125" PointY="20.875" />
+        <EntityTypeShape EntityType="masterpes3Model.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="15.25" />
+        <EntityTypeShape EntityType="masterpes3Model.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="18" />
+        <EntityTypeShape EntityType="masterpes3Model.AspNetUserRole" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="masterpes3Model.AspNetUser" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="masterpes3Model.Cart" Width="1.5" PointX="5.25" PointY="10.875" />
+        <EntityTypeShape EntityType="masterpes3Model.Category" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="masterpes3Model.ColorAndProduct" Width="1.5" PointX="5.25" PointY="7.5" />
+        <EntityTypeShape EntityType="masterpes3Model.Color" Width="1.5" PointX="0.75" PointY="14.875" />
+        <EntityTypeShape EntityType="masterpes3Model.orderItem" Width="1.5" PointX="8.25" PointY="8.25" />
+        <EntityTypeShape EntityType="masterpes3Model.Order" Width="1.5" PointX="6" PointY="2.5" />
+        <EntityTypeShape EntityType="masterpes3Model.Payment" Width="1.5" PointX="8.25" PointY="4.375" />
+        <EntityTypeShape EntityType="masterpes3Model.Product" Width="1.5" PointX="3" PointY="10.375" />
+        <EntityTypeShape EntityType="masterpes3Model.Review" Width="1.5" PointX="8.25" PointY="14.25" />
+        <EntityTypeShape EntityType="masterpes3Model.SizeAndProduct" Width="1.5" PointX="8.25" PointY="11.5" />
+        <EntityTypeShape EntityType="masterpes3Model.Size" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="masterpes3Model.sysdiagram" Width="1.5" PointX="10.75" PointY="7.125" />
+        <AssociationConnector Association="masterpes3Model.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" />
+        <AssociationConnector Association="masterpes3Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="masterpes3Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="masterpes3Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="masterpes3Model.FK__Cart__UserId__628FA481" />
+        <AssociationConnector Association="masterpes3Model.FK__Orders__Id__68487DD7" />
+        <AssociationConnector Association="masterpes3Model.FK__Reviews__aspId__71D1E811" />
+        <AssociationConnector Association="masterpes3Model.FK_Payment_AspNetUsers" />
+        <AssociationConnector Association="masterpes3Model.FK__Cart__ProductId__619B8048" />
+        <AssociationConnector Association="masterpes3Model.FK__Cart__SelectedCo__6477ECF3" />
+        <AssociationConnector Association="masterpes3Model.FK__Cart__SelectedSi__6383C8BA" />
+        <AssociationConnector Association="masterpes3Model.FK__Products__Catego__5441852A" />
+        <AssociationConnector Association="masterpes3Model.FK__ColorAndP__color__5CD6CB2B" />
+        <AssociationConnector Association="masterpes3Model.FK__ColorAndP__produ__5DCAEF64" />
+        <AssociationConnector Association="masterpes3Model.FK__Products__colori__5535A963" />
+        <AssociationConnector Association="masterpes3Model.FK__orderItem__Order__6B24EA82" />
+        <AssociationConnector Association="masterpes3Model.FK__orderItem__Produ__6C190EBB" />
+        <AssociationConnector Association="masterpes3Model.FK_Payment_Orders" />
+        <AssociationConnector Association="masterpes3Model.FK__Products__Sizeid__5629CD9C" />
+        <AssociationConnector Association="masterpes3Model.FK__Reviews__Product__72C60C4A" />
+        <AssociationConnector Association="masterpes3Model.FK__SizeAndPr__produ__59FA5E80" />
+        <AssociationConnector Association="masterpes3Model.FK__SizeAndPr__sizeI__59063A47" />
+        <AssociationConnector Association="masterpes3Model.FK_Orders_Orders" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

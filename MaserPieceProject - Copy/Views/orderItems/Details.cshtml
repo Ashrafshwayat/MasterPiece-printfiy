@@ -1,0 +1,94 @@
+﻿@model MaserPieceProject.Models.orderItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.AspNetUser.Email)</th>
+                                <td>@Html.DisplayFor(model => model.Order.AspNetUser.Email)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.FirstName)</th>
+                                <td>@Html.DisplayFor(model => model.Order.FirstName)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.LastName)</th>
+                                <td>@Html.DisplayFor(model => model.Order.LastName)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.Phone)</th>
+                                <td>@Html.DisplayFor(model => model.Order.Phone)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.Adress)</th>
+                                <td>@Html.DisplayFor(model => model.Order.Adress)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.City)</th>
+                                <td>@Html.DisplayFor(model => model.Order.City)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.OrderDate)</th>
+                                <td>@Html.DisplayFor(model => model.Order.OrderDate) </td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.OrderPrice)</th>
+                                <td>@Html.DisplayFor(model => model.Order.OrderPrice) JD</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Order.PaymentMethod)</th>
+                                <td>@Html.DisplayFor(model => model.Order.PaymentMethod)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Product.ProductName)</th>
+                                <td>@Html.DisplayFor(model => model.Product.ProductName)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Product.ProductDescription)</th>
+                                <td>@Html.DisplayFor(model => model.Product.ProductDescription)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Product.price)</th>
+                                <td>@Html.DisplayFor(model => model.Product.price) JD</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                                <td>@Html.DisplayFor(model => model.Quantity)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.color)</th>
+                                <td>@Html.DisplayFor(model => model.Product)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.size)</th>
+                                <td>@Html.DisplayFor(model => model.size)</td>
+                            </tr>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Shipping)</th>
+                                <td>@Html.DisplayFor(model => model.Shipping)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        @*@Html.ActionLink("Edit", "Edit", new { id = Model.orderItemsId }) |*@
+                        @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-secondary" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

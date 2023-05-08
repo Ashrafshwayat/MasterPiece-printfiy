@@ -1,0 +1,128 @@
+﻿@model IEnumerable<MaserPieceProject.Models.orderItem>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size.name)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size.name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+
+<div class="card col-lg-12">
+    <div class="card-body">
+
+
+        <div class="col-lg-12">
+            <div class="">
+
+
+
+
+                
+                    <div @*class="m-l-25 m-r--38 m-lr-0-xl"*@>
+                        <div class="wrap-table-shopping-cart">
+                            <table class="table-shopping-cart">
+                                <tr class="table_head">
+                                    <th class="column-1">Product</th>
+                                    <th class="column-2"></th>
+                                    <th class="column-3">Total Price</th>
+                                    <th class="column-4">Quantity</th>
+                                    <th class="column-5">Date</th>
+
+                                </tr>
+
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="table_row">
+                                        <td class="column-1">
+                                            <div class="how-itemcart1">
+                                                <img src="/images/@item.Product.ProductImage" alt="IMG">
+                                            </div>
+                                        </td>
+                                        <td class="column-2">@item.Product.ProductName</td>
+
+                                        <td class="column-3">@item.Order.OrderPrice JD</td>
+                                        <td class="column-4">
+                                            @item.Quantity
+                                        </td>
+
+                                        <td class="column-5">@item.Order.OrderDate</td>
+
+                                    </tr>
+                                }
+
+
+
+
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                </div>
+            </div>
+    </div>

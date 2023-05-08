@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MaserPieceProject.Models.Color>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <p>
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+
+
+                    </p>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.colorId }, new { @class = "btn btn-primary" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.colorId }, new { @class = "btn btn-secondary" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.colorId }, new { @class = "btn btn-danger" })
+
+
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,151 @@
+﻿@using MaserPieceProject.Models
+@model LoginViewModel
+
+
+<link rel="stylesheet" href="../../Dashboard/assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="../../Dashboard/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+<link rel="stylesheet" href="../../Dashboard/assets/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="../../Dashboard/assets/css/style.css">
+<!-- End layout styles -->
+<link rel="shortcut icon" href="../../Dashboard/assets/images/favicon.png" />
+<link rel="stylesheet" href="../../Dashboard/assets/css/style.css">
+<!-- End layout styles -->
+<link rel="shortcut icon" href="../../Dashboard/assets/images/favicon.png" />
+
+<style>
+    /* body {
+        background-image: url("../../Dashboard/assets/images/slide-06.jpg")
+    }*/
+</style>
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+            <div class="row flex-grow">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auth-form-light text-left p-5">
+
+
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "pt-3", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @*<div class="brand-logo">
+                                <img src="../../Dashboard/assets/images/logo-dark.svg">
+                            </div>*@
+
+                            <h4 style="color:black">Hello! let's get started</h4>
+
+                            <h6 style="color:black">Sign in to continue.</h6>
+
+                            <div class="pt-3">
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                                <div class="form-group">
+                                    @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg", placeholder = "Email" })
+
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                </div>
+
+                                <div class="form-group">
+                                    @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg", placeholder = "Password" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="mt-3">
+
+                                    <input type="submit" value="Log in" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" />
+
+                                </div>
+
+
+
+
+                                @*<div class="my-2 d-flex justify-content-between align-items-center">
+                                    <div class="form-check">
+                                        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-label text-muted" })
+
+                                        @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-input" })
+
+
+                                    </div>
+                                </div>*@
+
+
+
+                                <br />
+
+
+                                @*<div class="mb-2">
+                                        <button type="button" class="btn btn-block btn-facebook auth-form-btn">
+
+
+
+                                        </button>
+                                    </div>*@
+
+
+                                <div class="mt-3">
+
+                                    <input type="submit" value=" Connect using facebook" class="btn btn-block btn-facebook auth-form-btn" />
+
+                                </div>
+
+
+
+
+
+
+                                <div class="text-center mt-4 font-weight-light">
+                                    Don't have an account?
+                                    @Html.ActionLink("Register as a new user", "Register", new { @class = "text-primary" })
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            @* Enable this once you have account confirmation enabled for password reset functionality
+                                <p>
+                                 @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                  </p>*@
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@*<div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>*@
+
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+
+
+
+
+
+

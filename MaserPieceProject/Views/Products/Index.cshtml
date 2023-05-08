@@ -1,0 +1,130 @@
+﻿@model IEnumerable<MaserPieceProject.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<style>
+    .thumbnail {
+        top: -50px;
+        left: -35px;
+        display: block;
+        z-index: 999;
+        cursor: pointer;
+        -webkit-transition-property: all;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease;
+        width: 50px;
+    }
+
+        /*  change the number below to scale to the appropriate size*/
+        .thumbnail:hover {
+            transform: scale(5);
+        }
+</style>
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="u-s-m-b-8">
+
+                        @using (Html.BeginForm("Searchacc", "Products"))
+                        {
+                            <div class="">
+                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="search" id="search" placeholder="Search products">
+                                        <span class="input-group-btn" style="margin-left:3px">
+                                            <button class="btn btn-primary" type="submit">Search</button>
+                                           
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <p>
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+
+
+
+                    </p>
+
+                    <table class="table table-hover">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductDescription)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductImage)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.price)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Category.CategoryName)
+                            </th>
+                            @*<th>
+                    @Html.DisplayNameFor(model => model.Color.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Size.name)
+                </th>*@
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                                </td>
+                                <td>
+                                    @*@Html.DisplayFor(modelItem => item.ProductImage)*@
+                                    <img src="~/images/@item.ProductImage" class="thumbnail" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                                </td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.Color.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size.name)
+                    </td>*@
+                                <td>
+
+
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }, new { @class = "btn btn-primary" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "btn btn-secondary" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "btn btn-danger" })
+
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MaserPieceProject.Models.Cart>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Cart_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Cart_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Cart_Id })
+        </td>
+    </tr>
+}
+
+</table>
